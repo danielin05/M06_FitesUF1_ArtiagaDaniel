@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: cat.iesesteveterradas.fites.Exercici2LlegeixTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.011 s <<< FAILURE! - in cat.iesesteveterradas.fites.Exercici2LlegeixTest
+testLlegeixFitxer  Time elapsed: 0.007 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: La llista de persones no hauria de ser nul·la. ==> expected: not <null>
+	at cat.iesesteveterradas.fites.Exercici2LlegeixTest.testLlegeixFitxer(Exercici2LlegeixTest.java:61)
+
+testImprimeixPersones  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+La sortida per pantalla no coincideix amb l'esperada. ==> expected: <Taylor Swift, 1989
+Ed Sheeran, 1991
+Adele Adkins, 1988
+Shawn Mendes, 1998
+> but was: <>
+	at cat.iesesteveterradas.fites.Exercici2LlegeixTest.testImprimeixPersones(Exercici2LlegeixTest.java:105)
+

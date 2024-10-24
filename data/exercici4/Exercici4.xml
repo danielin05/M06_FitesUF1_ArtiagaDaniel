@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<llista>
+    <llenguatge dificultat=".c" extensio="alta">
+        <nom>C</nom>
+        <any>1972</any>
+    </llenguatge>
+    <llenguatge dificultat=".java" extensio="mitjana">
+        <nom>Java</nom>
+        <any>1995</any>
+    </llenguatge>
+    <llenguatge dificultat=".js" extensio="baixa">
+        <nom>Javascript</nom>
+        <any>1995</any>
+    </llenguatge>
+    <llenguatge dificultat=".m" extensio="baixa">
+        <nom>Objective C</nom>
+        <any>1984</any>
+    </llenguatge>
+    <llenguatge dificultat=".dart" extensio="mitjana">
+        <nom>Dart</nom>
+        <any>2011</any>
+    </llenguatge>
+</llista>

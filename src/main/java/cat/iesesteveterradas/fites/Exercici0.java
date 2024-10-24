@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Objectius:
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 
 public class Exercici0 {
 
-    private String filePath;
+    private String filePath = System.getProperty(("user.dir") + "/data/exercici0/Exercici0.dat");
 
     public static void main(String args[]) {
         Exercici0 exercici = new Exercici0();
@@ -29,7 +30,7 @@ public class Exercici0 {
         exercici.configuraRutaFitxer(System.getProperty("user.dir") + "/data/exercici0/Exercici0.dat");
         // Executar la lògica principal
         exercici.executa();
-    }
+    }   
 
     // Mètode que conté la lògica principal
     public void executa() {
@@ -61,32 +62,70 @@ public class Exercici0 {
 
     // Mètode per comprovar l'existència del fitxer
     public Boolean comprovaExistenciaFitxer() {
-        // *************** CODI EXERCICI FITA **********************/
-        return null; // A substituir  
+        
+        boolean existeixFitxer;
+        File fitxer = new File(filePath);
+
+        if (fitxer.exists()){
+            existeixFitxer = true;
+        }else{
+            existeixFitxer = false;
+        }
+
+        return existeixFitxer;  
     }
 
     // Mètode per determinar si el fitxer és ocult
     public Boolean determinaSiEsOcult() {
-        // *************** CODI EXERCICI FITA **********************/
-        return null; // A substituir 
+
+        boolean esOcult;
+        File fitxer = new File(filePath);
+
+        if (fitxer.isHidden()){
+            esOcult = true;
+        }else{
+            esOcult = false;
+        }
+
+        return esOcult; 
     }
 
     // Mètode per obtenir la data de l'última modificació
     public Date obtenirDataUltimaModificacio() {
-        // *************** CODI EXERCICI FITA **********************/
-        return null; // A substituir  
+        File fitxer = new File(filePath);
+
+        Date ultimaModificacio = new Date(fitxer.lastModified());
+
+        return ultimaModificacio;  
     }
 
     // Mètode per verificar si el fitxer es pot modificar
     public Boolean verificarEsPotModificar() {
-        // *************** CODI EXERCICI FITA **********************/
-        return null; // A substituir 
+        boolean esPotModificar;
+        File fitxer = new File(filePath);
+
+        if (fitxer.canWrite()){
+            esPotModificar = true;
+        }else{
+            esPotModificar = false;
+        }
+
+        return esPotModificar; 
     }
 
     // Mètode per llistar els fitxers del directori base
     public ArrayList<String> llistarArxiusDirectori() {
-        // *************** CODI EXERCICI FITA **********************/
-        return null; // A substituir 
+        ArrayList<String> array = new ArrayList<>();
+
+        File fitxer = new File("data/exercici0");
+
+        String[] ruta = fitxer.list();
+
+        for(String l : ruta){
+            array.add(l);
+        }
+
+        return array;
     }
 
     /****************************************************************************/

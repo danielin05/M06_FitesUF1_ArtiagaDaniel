@@ -50,18 +50,40 @@ public class Exercici3 {
 
     // Mètode per serialitzar la llista a un fitxer
     public void serialitzaLlista(String filePath, ArrayList<Exercici3nau> llista) {
-        // *************** CODI EXERCICI FITA **********************/
+        try (FileOutputStream fos = new FileOutputStream(filePath);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);) {
+            oos.writeObject(llista);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
 
     // Mètode per deserialitzar la llista del fitxer
     public ArrayList<Exercici3nau> deserialitzaLlista(String filePath) {
-        // *************** CODI EXERCICI FITA **********************/
-        return null; // A substituir 
+        ArrayList<Exercici3nau> llista = null;
+
+        try (FileInputStream fis = new FileInputStream(filePath);
+            ObjectInputStream ois = new ObjectInputStream(fis);) {
+        
+          llista = (ArrayList) ois.readObject();
+        
+        } catch (IOException ioe) {
+          ioe.printStackTrace();
+        } catch (ClassNotFoundException c) {
+          System.out.println("Class not found");
+          c.printStackTrace();
+        }
+
+        return llista;
     }
 
     // Mètode per imprimir la llista
     public void imprimeixLlista(ArrayList<Exercici3nau> llista) {
-        // *************** CODI EXERCICI FITA **********************/
+        for (Exercici3nau x : llista) {
+            System.out.println(x);
+        }
     }
 
     /****************************************************************************/
